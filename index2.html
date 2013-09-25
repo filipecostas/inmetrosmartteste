@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
-    <title>Smart Inmetro Testes</title>
+    <title>MDS PhoneGap API Demo with jQuery Mobile</title>
 
  	<link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.3.2.min.css" />
 	<link rel="stylesheet" href="index.css" /> 
@@ -23,7 +23,7 @@
 	<div data-role="page" id="page-home" class="type-interior" data-theme="b">
 
 	<div data-role="header" data-theme="b">
-		<h1>Smart Inmetro Testes</h1>
+		<h1>MDS PhoneGap API Demo</h1>
  		<a href="#" data-icon="home" data-iconpos="notext" id="intro" class="ui-btn-right">intro</a>
 	</div>
 
@@ -34,19 +34,19 @@
 
 				<ul data-role="listview" data-theme="b" data-dividertheme="b">
 					<li id="listdivider" data-role="list-divider">PhoneGap API</li>
-					<li><a id="click-accelerometer">Acelerometro</a></li>
+					<li><a id="click-accelerometer">Accelerometer</a></li>
 					<li><a id="click-camera">Camera</a></li>
-					<li><a id="click-capture">Captura</a></li>
-					<li><a id="click-compass">Bussola</a></li>
- 					<li><a id="click-connection">Conexao</a></li>
-					<li><a id="click-contacts">Contatos</a></li>
-					<li><a id="click-device">Dispositivo</a></li>
-					<li><a id="click-events">Eventos</a></li>
-					<li><a id="click-file">Arquivos</a></li>
-					<li><a id="click-geolocation">Geolocalizacao</a></li>
+					<li><a id="click-capture">Capture</a></li>
+					<li><a id="click-compass">Compass</a></li>
+ 					<li><a id="click-connection">Connection</a></li>
+					<li><a id="click-contacts">Contacts</a></li>
+					<li><a id="click-device">Device</a></li>
+					<li><a id="click-events">Events</a></li>
+					<li><a id="click-file">File</a></li>
+					<li><a id="click-geolocation">Geolocation</a></li>
 					<li><a id="click-media">Media</a></li>
-					<li><a id="click-notification">Notificacoes</a></li>
-					<li><a id="click-storage">Dados</a></li>
+					<li><a id="click-notification">Notification</a></li>
+					<li><a id="click-storage">Storage</a></li>
 				</ul>
 			</div>
 		</div>
@@ -54,24 +54,24 @@
 		    <div class="api-div" id="api-intro">
 		         <h2>PhoneGap</h2>
 				<blockquote>
-  					<p>Uma plataforma de aplicativo HTML5/CSS3/Javascript que permite criar aplicacoes nativas com tecnologias web tendo a uma serie de funcionalidades e recursos do dispositivo.</p>
+  					<p>An HTML5 app platform that allows you to author native applications with web technologies and get access to APIs and app stores.</p>
 				</blockquote>
 
 				<div>
-				<h4>Selecione um <strong>PhoneGap API </strong>e veja a demonstracao.</h4>
-				<h4 class="help">Veja <strong>assets/www/apis/</strong> o javascript da implementacao da api.</h4>
+				<h4>Select a <strong>PhoneGap API </strong>to see it demonstrated.</h4>
+				<h4 class="help">See <strong>assets/www/apis/</strong> for JavaScript implementations of each API.</h4>
 				
-				<p id="copyright">&copy; 2013 Inmetro</p>
+				<p id="copyright">&copy; 2012 Mobile Developer Solutions</p>
 				</div>		    					
 			</div>
 
 		    <div class="api-div" id="api-accelerometer">
-		         <h2>Acelerometro</h2>
+		         <h2>Accelerometer</h2>
 				<blockquote>
-  					<p>Dispositivo de captura de movimento na direção x, y, e z.</p>
+  					<p>Captures device motion in the x, y, and z direction.</p>
 				</blockquote>
-				<h4 class="help"><b>Toggle</b> o stop/start
-				displa do acelerometro.<br/><b>Get Current</b> retorna a posicao atual no time do acelerometro.</h4>
+				<h4 class="help"><b>Toggle</b> to stop/start
+				accelerometer watch.<br/><b>Get Current</b> for one-time accelerometer reading.</h4>
 				<div class="ui-grid-b">
      	 				<div class="ui-block-a">X: <b id="x">&nbsp;</b></div>
      	 				<div class="ui-block-b">Y: <b id="y">&nbsp;</b></div> 
@@ -87,10 +87,10 @@
 		    <div class="api-div" id="api-camera">
                 <h2>Camera</h2>
 				<blockquote>
-  					<p>O <code>Take a Picture</code> oferece acesso a camera do dispositivo.</p>
+  					<p>The <code>camera</code> object provides access to the device's default camera application.</p>
 				</blockquote>
-				<h4 class="help"><b>Tire foto</b> utilizando a camera do dispositvo.<br/>
-				<b>Select</b> obtem a foto do album.</h4>
+				<h4 class="help"><b>Take a Picture</b> using device camera.<br/>
+				<b>Select</b> to get picture from album or library.</h4>
 				<div class="ui-grid-a">
 					<div class="ui-block-a"><div data-role="button" onclick="take_pic();">Take a Picture</div></div>
 					<div class="ui-block-b"><div data-role="button" onclick="album_pic();">Select</div></div>
@@ -99,9 +99,9 @@
 			</div>
 
 		    <div class="api-div" id="api-capture">
-				<h2>Captura</h2>
+				<h2>Capture</h2>
 				<blockquote>
-					<p>Fornece acesso ao audio, imagem e recursos de captura de video do dispositivo.</p>
+					<p>Provides access to the audio, image, and video capture capabilities of the device.</p>
 				</blockquote>
 				<div class="ui-grid-b">
 					<div class="ui-block-a"><div data-role="button" onclick="captureAudio();">Audio</div></div>
@@ -114,12 +114,12 @@
 			</div>
 
 		    <div class="api-div" id="api-compass">
-				<h2>Bussola</h2>
+				<h2>Compass</h2>
 				<blockquote>
-					<p>Obtem a direcao do dispositivo.</p>
+					<p>Obtains the direction that the device is pointing.</p>
 				</blockquote>
-				<h4 class="help"><b>Toggle</b> o stop/start
-				relogio da bussola. <br/><b>Get Current</b> para disparar o time da bussola.</h4>
+				<h4 class="help"><b>Toggle</b> to stop/start
+				compass watch. <br/><b>Get Current</b> for one-time compass reading.</h4>
 
 				<!-- <h4 class="help"><code>Toggle Compass</code> to stop/start
 				compass watch. <br/><code>Get Current</code> for one-time compass reading.</h4> -->
@@ -133,27 +133,27 @@
     		</div>
 
 		    <div class="api-div" id="api-connection">
-				<h2>Conexao</h2>
+				<h2>Connection</h2>
 				<blockquote>
-  					<p>O <code>Check Connection</code> obtem acesso a informações sobre a conexão celular e Wi-Fi do dispositivo.</p>
+  					<p>The <code>connection</code> object gives access to the device's cellular and wifi connection information.</p>
 				</blockquote>
    				<div data-role="button" onclick="check_network();">Check Connection</div>
    				<div>Connection: <b id="connection"></b></div>    
 			</div>
 
 		    <div class="api-div" id="api-contacts">
-				<h2>Contato</h2>
+				<h2>Contacts</h2>
 				<blockquote>
-  					<p>O <code>contacts</code> busca os contatos salvos na agenda do dispositivo.</p>
+  					<p>The <code>contacts</code> object provides access to the device contacts database.</p>
 				</blockquote>
    				<div data-role="button" onclick="get_contacts();">Check Contacts</div>
    				<div id="contacts-output"></div>
 			</div>
 
 		    <div class="api-div" id="api-device">
-				<h2>Dispositivo</h2>
+				<h2>Device</h2>
 				<blockquote>
-					<p>O <code>device</code> informa as configuracoes basica do software.</p>
+					<p>The <code>device</code> object describes the device's hardware and software.</p>
 				</blockquote>
 				<h4><strong>Important</strong> Access <code>device</code> object only after <code>deviceready</code> event.</h4>
       			<table id="deviceinfo">
@@ -209,9 +209,9 @@
 			</div>
 
 		    <div class="api-div" id="api-events">
-				<h2>Eventos</h2>
+				<h2>Events</h2>
 				<blockquote>
-					<p>Eventos do ciclo de vida do Phonegap</p>
+					<p>PhoneGap lifecycle events.</p>
 				</blockquote>
 				<h4 class="help">Tap device (or virtual device) <code>menu</code> or <code>search</code> buttons to see example callback output.</h4>
 				<span id="eventOutput"></span>
@@ -219,9 +219,9 @@
 			</div>
 
 		    <div class="api-div" id="api-file">
-				<h2>Arquivos</h2>
+				<h2>File</h2>
 				<blockquote>
-					<p>Navegar nos arquivos de sistema do dispositivo. Pode ler e modificar arquivos.</p>
+					<p>An API to read, write and navigate file system hierarchies.</p>
 				</blockquote>
 				<div id="file-system-text"></div>
 				<fieldset class="ui-grid-a">				
@@ -247,12 +247,12 @@
 			</div>
 
 		    <div class="api-div" id="api-geolocation">
-				<h2>Geolocalizacao</h2>
+				<h2>Geolocation</h2>
 				<blockquote>
-  					<p>O <code>geolocation</code> obtem acesso ao senso de GPS do dispositivo.</p>
+  					<p>The <code>geolocation</code> object provides access to the device's GPS sensor.</p>
 				</blockquote>
-				<h4 class="help"><b>Toggle</b> com stop/start
-				para verificar as coordenadas de localizacao. <br/><b>Get Current</b> para leitura atual da localizacao unica.</h4>
+				<h4 class="help"><b>Toggle</b> to stop/start
+				geolocation watch. <br/><b>Get Current</b> for one-time geolocation reading.</h4>
 				<div class="ui-grid-a">
 					<div class="ui-block-a"><div data-role="button" onclick="toggleWatchPosition();">Toggle</div></div>
 					<div class="ui-block-b"><div data-role="button" onclick="getCurrentPosition();">Get Current</div></div>
@@ -264,7 +264,7 @@
 		    <div class="api-div" id="api-media">
 				<h2>Media</h2>
 				<blockquote>
-  					<p>A <code>Media</code> fornece a capacidade de gravar e reproduzir arquivos de audio em um dispositivo. </p>
+  					<p>The <code>Media</code> object provides the ability to record and play back audio files on a device. </p>
 				</blockquote>
 				<b>Play MP3 Song</b>
 				<div data-role="controlgroup" data-type="horizontal">				
@@ -273,7 +273,7 @@
 					<div data-role="button" id="stopaudio" class="wider-btn" data-theme="b">&nbsp;Stop&nbsp;</div>	
 				<div class="ui-grid-a">
 					<div class="ui-block-a"> Current: <span id="audio_position">0 sec</span></div>
-					<div class="ui-block-b">Total: <span id="media_dur">0</span> sec</div>
+					<div class="ui-block-b">Total: <span id=media_dur>0</span> sec</div>
 				</div>
 				</div>
 				<b>Live Audio Recording (5 sec)</b>
@@ -288,9 +288,9 @@
 			</div>
 
 		    <div class="api-div" id="api-notification">
-				<h2>Noticacao</h2>
+				<h2>Notification</h2>
 				<blockquote>
-  					<p>Visual, sonora, e tatil.</p>
+  					<p>Visual, audible, and tactile device notifications.</p>
 				</blockquote>
 				<fieldset class="ui-grid-a">
 					<div class="ui-block-a"><button onclick="showAlert();" data-theme="c" data-icon="alert">Alert</button></div>
@@ -303,9 +303,9 @@
 			</div>
 
 		    <div class="api-div" id="api-storage">
-				<h2>Dados</h2>
+				<h2>Storage</h2>
 				<blockquote>
-  					<p>Acesso as opcoes de armazenamento de dados do dispositivo.</p>
+  					<p>Provides access to the devices storage options.</p>
 				</blockquote>
 				<h4 class="help">Based on <strong>W3C Web SQL Database Spec</strong> and <strong>W3C Web Storage API Spec</strong></h4>							
 				<div data-role="controlgroup">
@@ -325,10 +325,11 @@
 					</div>
 				</div>
 			</div>
+
 		</div>
 	</div>
 	<div data-role="footer" data-position="fixed" class="footer-docs" data-theme="b">
-		<p>&copy; 2013 Inmetro</p>
+		<p>&copy; 2012 Mobile Developer Solutions</p>
 	</div>	
 	</div>	
 	<script type="text/javascript" charset="utf-8" src="apis/accelerometer.js"></script>
