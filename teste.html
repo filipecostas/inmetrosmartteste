@@ -1,0 +1,56 @@
+<!-- Copyright (c) 2012 Mobile Developer Solutions -->
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+    <title>Smart Inmetro Testes</title>
+
+ 	<link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.3.2.min.css" />
+	<link rel="stylesheet" href="index.css" /> 
+
+    <script src="jquery.mobile/jquery-1.7.2.min"></script>
+	  
+	<!-- CDN Respositories: For production, replace lines above with these uncommented minified versions -->
+	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />-->
+	<!-- <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>-->
+	<!-- <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>-->
+	</head>
+  
+  <body onload="init();">
+	
+	<script>
+		jQuery(document).ready(function(){
+			var id = "TI";
+			var idbotao = "#btnSalvar"+id;
+			var valorbotao = jQuery("#btnSalvarTi").attr("valorcampo");
+			
+			jQuery("#btnSalvarTi").click(function(){
+				alert("id do botao: " + idbotao + "\t valor-botao: " + valorbotao);
+			});
+		});
+	</script>
+	
+	
+	<div id="TI">
+		<a id="btnEditarTi" title="editar">imgeditar</a> 
+		<a id="btnSalvarTi" valorcampo="TI" title="editar">imgsalvar</a>
+		<input id="inputEditarTI" value="" type="text" />
+	</div>
+	
+	
+	
+	<script type="text/javascript" charset="utf-8" src="apis/accelerometer.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/camera.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/capture.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/compass.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/connection.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/contacts.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/device.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/events.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/file.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/geolocation.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/media.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/notification.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/storage.js"></script> 			
+  </body>
+</html>
