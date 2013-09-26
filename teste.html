@@ -27,7 +27,14 @@
 			jQuery("#btnSalvarTi").click(function(){
 				alert("id do botao: " + idbotao + "\t valor-botao: " + valorbotao);
 			});
+			
+			jQuery("#btTesteParam").click({p1: "Koe", p2: "Jae"}, qualquer_com_param);
 		});
+		
+		function qualquer_com_param(event)
+		{
+			alert(event.data.p1 + " e " + event.data.p2);
+		}
 	</script>
 	
 	
@@ -35,8 +42,10 @@
 		<a id="btnEditarTi" title="editar">imgeditar</a> 
 		<a id="btnSalvarTi" valorcampo="TI" title="editar">imgsalvar</a>
 		<input id="inputEditarTI" value="" type="text" />
+		
 	</div>
 	
+	<br> <input id="btTesteParam" value="botao" type="button" />
 	
 	
 	<script type="text/javascript" charset="utf-8" src="apis/accelerometer.js"></script>

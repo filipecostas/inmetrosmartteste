@@ -1,0 +1,48 @@
+## questoes a serem resolvidas
+
+- definicoes de ferramentas, framework, dispositivos;
+- definicoes de tecnologias para o servico;
+- definicoes dos dispositivos de testes;
+- disponibilidade de pessoa para programar servico;
+
+
+
+## construcao
+
+- refazer desenho de fluxo:
+- dar nome aos conceitos e frameworks e ferramentas;
+- dar exemplos;
+- melhorar o fluxo para entendimento;
+- descrever entradas e saídas;
+- adicionar os repositorios e phonegapbuild nos desenhos;
+
+
+
+## ferramentas
+
+- especificar ferramentas de desenvolvimento;
+- fala das ferramentas pagas e licencas;
+- falar dos dispositivos;
+- selecionar alguns frameworks para testar na implementacao mobile (HTML5, CSS3, JAVASCRIPT);
+
+
+
+## uso
+
+- camadas (especificar melhor as camadas);
+- explicar melhor a sincronizacao (replicacao);
+- explicar sobre os servicos;
+- falar sobre a diferenca do W Phone por nao utilizar o SQLITE que a maioria das plataformas utilizam;
+- especificar melhor os objetos e artefatos nos diagramas;
+- citar as possibilidades de tecnologia para servicos (utilizar .NET, trabalhar com restfull);
+- especificar regras de autenticacao via mobile (leandro);
+- 
+
+
+## pesquisar
+
+- principais problemas do phonegap (principais riscos que enfrentaremos);
+
+
+
+
