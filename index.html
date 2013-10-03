@@ -1,351 +1,166 @@
-<!-- Copyright (c) 2012 Mobile Developer Solutions -->
-<!DOCTYPE HTML>
+
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
-    <title>Smart Inmetro Testes</title>
-
- 	<link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.3.2.min.css" />
-	<link rel="stylesheet" href="index.css" /> 
-
-    <script src="jquery.mobile/jquery-1.7.2.min"></script>
-	<script src="jquery.mobile/jquery.mobile-1.3.2.min"></script>
-	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-	<script type="text/javascript" charset="utf-8" src="index.js"></script>
-  
-	<!-- CDN Respositories: For production, replace lines above with these uncommented minified versions -->
-	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />-->
-	<!-- <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>-->
-	<!-- <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>-->
-	</head>
-  
-  <body onload="init();">
-	<div data-role="page" id="page-home" class="type-interior" data-theme="b">
-
-	<div data-role="header" data-theme="b">
-		<h1>Smart Inmetro Testes</h1>
- 		<a href="#" data-icon="home" data-iconpos="notext" id="intro" class="ui-btn-right">intro</a>
-	</div>
-
-	<div data-role="content" data-theme="c">			
-		<div class="content-secondary">
-			<div data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="b">
-				<h3>PhoneGap API</h3>
-
-				<ul data-role="listview" data-theme="b" data-dividertheme="b">
-					<li id="listdivider" data-role="list-divider">PhoneGap API</li>
-					<li><a id="click-storage">Dados</a></li>
-					<li><a id="click-accelerometer">Acelerometro</a></li>
-					<li><a id="click-camera">Camera</a></li>
-					<li><a id="click-capture">Captura</a></li>
-					<li><a id="click-compass">Bussola</a></li>
- 					<li><a id="click-connection">Conexao</a></li>
-					<li><a id="click-contacts">Contatos</a></li>
-					<li><a id="click-device">Dispositivo</a></li>
-					<li><a id="click-events">Eventos</a></li>
-					<li><a id="click-file">Arquivos</a></li>
-					<li><a id="click-geolocation">Geolocalizacao</a></li>
-					<li><a id="click-media">Media</a></li>
-					<li><a id="click-notification">Notificacoes</a></li>
-					<li><a id="click-storage">Dados</a></li>
-				</ul>
-
-			</div>
-		</div>
-		<div class="content-primary">
-		    <div class="api-div" id="api-intro">
-		         <h2>PhoneGap</h2>
-				<blockquote>
-  					<p>Uma plataforma de aplicativo HTML5/CSS3/Javascript que permite criar aplicacoes nativas com tecnologias web tendo a uma serie de funcionalidades e recursos do dispositivo.</p>
-				</blockquote>
-
-				<div>
-				<h4>Selecione um <strong>PhoneGap API </strong>e veja a demonstracao.</h4>
-				<h4 class="help">Veja <strong>assets/www/apis/</strong> o javascript da implementacao da api.</h4>
-				
-				<p id="copyright">&copy; 2013 Inmetro</p>
-				</div>		    					
-			</div>
-
-		    <div class="api-div" id="api-accelerometer">
-		         <h2>Acelerometro</h2>
-				<blockquote>
-  					<p>Dispositivo de captura de movimento na direção x, y, e z.</p>
-				</blockquote>
-				<h4 class="help"><b>Toggle</b> o stop/start
-				displa do acelerometro.<br/><b>Get Current</b> retorna a posicao atual no time do acelerometro.</h4>
-				<div class="ui-grid-b">
-     	 				<div class="ui-block-a">X: <b id="x">&nbsp;</b></div>
-     	 				<div class="ui-block-b">Y: <b id="y">&nbsp;</b></div> 
-     	 				<div class="ui-block-c">Z: <b id="z">&nbsp;</b></div>
-    				</div>
-    				<div>Timestamp: <b id="accel_timestamp">0</b></div>   			    
-				<div class="ui-grid-a">
-					<div class="ui-block-a"><div data-role="button" onclick="toggleAccel();">Toggle</div></div>
-					<div class="ui-block-b"><div data-role="button" onclick="getAccel();">Get Current</div></div>	   
-				</div>				
-			</div>
-
-		    <div class="api-div" id="api-camera">
-                <h2>Camera</h2>
-				<blockquote>
-  					<p>O <code>Take a Picture</code> oferece acesso a camera do dispositivo.</p>
-				</blockquote>
-				<h4 class="help"><b>Tire foto</b> utilizando a camera do dispositvo.<br/>
-				<b>Select</b> obtem a foto do album.</h4>
-				<div class="ui-grid-a">
-					<div class="ui-block-a"><div data-role="button" onclick="take_pic();">Take a Picture</div></div>
-					<div class="ui-block-b"><div data-role="button" onclick="album_pic();">Select</div></div>
-				</div>				
-      			<img id="cameraImage" src="" />
-			</div>
-
-		    <div class="api-div" id="api-capture">
-				<h2>Captura</h2>
-				<blockquote>
-					<p>Fornece acesso ao audio, imagem e recursos de captura de video do dispositivo.</p>
-				</blockquote>
-				<div class="ui-grid-b">
-					<div class="ui-block-a"><div data-role="button" onclick="captureAudio();">Audio</div></div>
-					<div class="ui-block-b"><div data-role="button" onclick="captureImage();">Image</div></div>
-					<div class="ui-block-c"><div data-role="button" onclick="captureVideo();">Video</div></div>
-				</div>				
-				<div>Capture Result: <span id="capture-result"></span><br/>
-				<span id="format-data"></span><br/>
-				</div>
-			</div>
-
-		    <div class="api-div" id="api-compass">
-				<h2>Bussola</h2>
-				<blockquote>
-					<p>Obtem a direcao do dispositivo.</p>
-				</blockquote>
-				<h4 class="help"><b>Toggle</b> o stop/start
-				relogio da bussola. <br/><b>Get Current</b> para disparar o time da bussola.</h4>
-
-				<!-- <h4 class="help"><code>Toggle Compass</code> to stop/start
-				compass watch. <br/><code>Get Current</code> for one-time compass reading.</h4> -->
-				<div class="ui-grid-a">
-					<div class="ui-block-a"><div data-role="button" onclick="toggleCompass();">Toggle</div></div>
-					<div class="ui-block-b"><div data-role="button" onclick="getCurrentHeading();">Get Current</div></div>
-				</div>
-				<div>
-     	 		Compass Heading: <b id="heading"></b>
-     	 		</div>
-    		</div>
-
-		    <div class="api-div" id="api-connection">
-				<h2>Conexao</h2>
-				<blockquote>
-  					<p>O <code>Check Connection</code> obtem acesso a informações sobre a conexão celular e Wi-Fi do dispositivo.</p>
-				</blockquote>
-   				<div data-role="button" onclick="check_network();">Check Connection</div>
-   				<div>Connection: <b id="connection"></b></div>    
-			</div>
-
-		    <div class="api-div" id="api-contacts">
-				<h2>Contato</h2>
-				<blockquote>
-  					<p>O <code>contacts</code> busca os contatos salvos na agenda do dispositivo.</p>
-				</blockquote>
-   				<div data-role="button" onclick="get_contacts();">Check Contacts</div>
-   				<div id="contacts-output"></div>
-			</div>
-
-		    <div class="api-div" id="api-device">
-				<h2>Dispositivo</h2>
-				<blockquote>
-					<p>O <code>device</code> informa as configuracoes basica do software.</p>
-				</blockquote>
-				<h4><strong>Important</strong> Access <code>device</code> object only after <code>deviceready</code> event.</h4>
-      			<table id="deviceinfo">
-  					<tr>
-   					 	<th>Device</th>
-   					 	<th class="alt">Value</th>
-  					</tr>
-  					<tr>
-    					<td>Name</td>
-    					<td class="alt"><strong id="name">&nbsp;</strong></td>
-  					</tr>
-  					<tr>
-    					<td>Platform</td>
-   					 	<td class="alt"><strong id="platform">&nbsp;</strong></td>
-  					</tr>
-  					<tr>
-    					<td>PhoneGap Version</td>
-   					 	<td class="alt"><strong id="pgversion">&nbsp;</strong></td>
-  					</tr>
-  					<tr>
-    					<td>UUID</td>
-   					 	<td class="alt"><strong id="uuid">&nbsp;</strong></td>
-  					</tr>
-  					<tr>
-    					<td>OS Version</td>
-   					 	<td class="alt"><strong id="version">&nbsp;</strong></td>
-  					</tr>
-  					<tr>
-   					 	<th>Screen</th>
-   					 	<th class="alt">Value</th>
-  					</tr>
-  					<tr>
-    					<td>Width</td>
-    					<td class="alt"><strong id="width">&nbsp;</strong></td>
-  					</tr>
-   					<tr>
-    					<td>Height</td>
-    					<td class="alt"><strong id="height">&nbsp;</strong></td>
-  					</tr>
-   					<tr>
-    					<td>Available Width</td>
-    					<td class="alt"><strong id="availwidth">&nbsp;</strong></td>
-  					</tr>
-   					<tr>
-    					<td>Available Height</td>
-    					<td class="alt"><strong id="availheight">&nbsp;</strong></td>
-  					</tr>
-   					<tr>
-    					<td>Color Depth</td>
-    					<td class="alt"><strong id="colorDepth">&nbsp;</strong></td>
-  					</tr> 					
-				</table>							
-			</div>
-
-		    <div class="api-div" id="api-events">
-				<h2>Eventos</h2>
-				<blockquote>
-					<p>Eventos do ciclo de vida do Phonegap</p>
-				</blockquote>
-				<h4 class="help">Tap device (or virtual device) <code>menu</code> or <code>search</code> buttons to see example callback output.</h4>
-				<span id="eventOutput"></span>
-				<h4>Other <code>event</code> example callbacks use console.log</h4>								
-			</div>
-
-		    <div class="api-div" id="api-file">
-				<h2>Arquivos</h2>
-				<blockquote>
-					<p>Navegar nos arquivos de sistema do dispositivo. Pode ler e modificar arquivos.</p>
-				</blockquote>
-				<div id="file-system-text"></div>
-				<fieldset class="ui-grid-a">				
- 					<div class="ui-block-a">
- 						<div data-role="button" onclick="createFile();">Create</div>
- 					</div>
- 					<div class="ui-block-b">
- 						<div data-role="button" onclick="writeFile();">Write</div>
- 					</div>
-   					<span id="file-status">Status:</span>
-   					<span id="file-contents"></span>
-   				</fieldset>
-				<fieldset class="ui-grid-a">				
- 					<div class="ui-block-a">
-   						<div data-role="button" onclick="readFile();">Read</div>
-   					</div>
- 					<div class="ui-block-b">
- 						<div data-role="button" onclick="removeFile();">Remove</div>
- 					</div>
-   					Read text: <span id="file-read-text"></span><br/>
-   					Data Url: <span id="file-read-dataurl"></span>
-   				</fieldset>
-			</div>
-
-		    <div class="api-div" id="api-geolocation">
-				<h2>Geolocalizacao</h2>
-				<blockquote>
-  					<p>O <code>geolocation</code> obtem acesso ao senso de GPS do dispositivo.</p>
-				</blockquote>
-				<h4 class="help"><b>Toggle</b> com stop/start
-				para verificar as coordenadas de localizacao. <br/><b>Get Current</b> para leitura atual da localizacao unica.</h4>
-				<div class="ui-grid-a">
-					<div class="ui-block-a"><div data-role="button" onclick="toggleWatchPosition();">Toggle</div></div>
-					<div class="ui-block-b"><div data-role="button" onclick="getCurrentPosition();">Get Current</div></div>
-				</div>
-   				<div id="cur_position"></div>
-   				<img id="map"/>								
-			</div>
-
-		    <div class="api-div" id="api-media">
-				<h2>Media</h2>
-				<blockquote>
-  					<p>A <code>Media</code> fornece a capacidade de gravar e reproduzir arquivos de audio em um dispositivo. </p>
-				</blockquote>
-				<b>Play MP3 Song</b>
-				<div data-role="controlgroup" data-type="horizontal">				
-					<div data-role="button" id="playaudio" class="wider-btn" data-theme="b">&nbsp;Play&nbsp;</div>
-					<div data-role="button" id="pauseaudio" class="wider-btn" data-theme="b">Pause</div>
-					<div data-role="button" id="stopaudio" class="wider-btn" data-theme="b">&nbsp;Stop&nbsp;</div>	
-				<div class="ui-grid-a">
-					<div class="ui-block-a"> Current: <span id="audio_position">0 sec</span></div>
-					<div class="ui-block-b">Total: <span id="media_dur">0</span> sec</div>
-				</div>
-				</div>
-				<b>Live Audio Recording (5 sec)</b>
- 				<div data-role="controlgroup" data-type="horizontal">	
- 					<div data-role="button" id="startRecord" class="wider-btn" data-theme="b">Record Audio</div>
- 					<div data-role="button" id="playbackRecord" class="wider-btn" data-theme="b">&nbsp;Playback&nbsp;</div>
-				<div class="ui-grid-a">
-   					<div class="ui-block-a">Status: <span id="record-status"></span></div>
-   					<div class="ui-block-b"><span id="record-time"></span></div>
-   				</div>
-				</div>
-			</div>
-
-		    <div class="api-div" id="api-notification">
-				<h2>Noticacao</h2>
-				<blockquote>
-  					<p>Visual, sonora, e tatil.</p>
-				</blockquote>
-				<fieldset class="ui-grid-a">
-					<div class="ui-block-a"><button onclick="showAlert();" data-theme="c" data-icon="alert">Alert</button></div>
-					<div class="ui-block-b"><button onclick="showConfirm();" data-theme="c" data-icon="check">Confirm</button></div>	   
-				</fieldset>				
-				<fieldset class="ui-grid-a">
-					<div class="ui-block-a"><button onclick="beep();" data-theme="b">Beep</button></div>
-					<div class="ui-block-b"><button onclick="vibrate();" data-theme="b">Vibrate</button></div>	   
-				</fieldset>				
-			</div>
-
-		    <div class="api-div" id="api-storage">
-				<h2>Dados</h2>
-				<blockquote>
-  					<p>Acesso as opcoes de armazenamento de dados do dispositivo.</p>
-				</blockquote>
-				<h4 class="help">Based on <strong>W3C Web SQL Database Spec</strong> and <strong>W3C Web Storage API Spec</strong></h4>							
-				<div data-role="controlgroup">
-					<div data-role="button" onclick="createDB();">Create DB</div>
-					<div data-role="button" onclick="getSqlResultSet();">SQL Result Set</div>
-					<div class="ui-grid-a">
-					SQL Result: <br/><span id="sql-result"></span><br/>
-					</div>
-				</div>
-				
-				<div data-role="controlgroup">
-					<div data-role="button" onclick="writeLocalStorage();">Write LocalStorage</div>
-					<div data-role="button" onclick="readLocalStorage();">Read LocalStorage</div>
-					<div data-role="button" onclick="removeItemLocalStorage();">Remove Item</div>
-					<div class="ui-grid-a">
-					Local Storage: <span id="local-storage-result"></span><br/>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div data-role="footer" data-position="fixed" class="footer-docs" data-theme="b">
-		<p>&copy; 2013 Inmetro</p>
-	</div>	
-	</div>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Servir App Beta</title>
+		
+		<!-- jquery mobile -->
+			<link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.3.2.min.css" />
+			<script src="jquery.mobile/jquery-1.7.2.min.js"></script>
+			<script src="jquery.mobile/jquery.mobile-1.3.2.min.js"></script>
 	
-	<script type="text/javascript" charset="utf-8" src="apis/accelerometer.js"></script>
-	<script type="text/javascript" charset="utf-8" src="apis/camera.js"></script>
-	<script type="text/javascript" charset="utf-8" src="apis/capture.js"></script>
-	<script type="text/javascript" charset="utf-8" src="apis/compass.js"></script>
-	<script type="text/javascript" charset="utf-8" src="apis/connection.js"></script>
-	<script type="text/javascript" charset="utf-8" src="apis/contacts.js"></script>
-	<script type="text/javascript" charset="utf-8" src="apis/device.js"></script>
-	<script type="text/javascript" charset="utf-8" src="apis/events.js"></script>
-	<script type="text/javascript" charset="utf-8" src="apis/file.js"></script>
-	<script type="text/javascript" charset="utf-8" src="apis/geolocation.js"></script>
-	<script type="text/javascript" charset="utf-8" src="apis/media.js"></script>
-	<script type="text/javascript" charset="utf-8" src="apis/notification.js"></script>
-	<script type="text/javascript" charset="utf-8" src="apis/storage.js"></script> 			
-  </body>
+		<!-- jquery mobile - theme -->
+			<link rel="stylesheet" href="themes/servir-thema-01.min.css" />
+			<link rel="stylesheet" href="themes/servir-estilo.css" />
+				
+		
+		<!-- cordova -->
+			<!--script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
+			
+		<!-- apis -->
+			<link rel="stylesheet" href="index.css" /> 
+			<script type="text/javascript" charset="utf-8" src="index.js"></script>
+			
+	  
+		<!-- CDN Respositories: For production, replace lines above with these uncommented minified versions -->
+			<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />-->
+			<!-- <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>-->
+			<!-- <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>-->
+		
+	</head>
+	<body>
+		
+		<!-- ###################### page - home -->
+		<div data-role="page" id="page-home" class="servir-estilo-home" data-theme="a">
+
+			<!-- content -->
+			<div data-role="content" class="content-home" data-theme="a">
+
+				<div class="logo-servir-splash">
+					<img src="themes/images/servir-logo-splash.png" />
+				</div>
+
+				<div class="servir-grupo">
+					<label>Sou consumidor:</label>
+					<a href="#page-consulta" data-role="button" data-theme="a" data-icon="arrow-r" data-iconpos="right">Entrar</a>
+				</div>
+
+				<div class="servir-grupo">
+					<label>Sou avaliador:</label>
+					<form>
+  					<input type="text" name="email" id="basic" value="" placeholder="Email"  />
+  					<input type="text" name="senha" id="basic" value="" placeholder="Senha"  />
+  					<a href="#page-consulta" data-role="button" data-theme="a" data-icon="arrow-r" data-iconpos="right" >Logar</a>
+					</form>
+					<div class="servir-extras">
+						<a href="#" data-role="button" data-theme="a" data-icon="alert" data-iconpos="left" data-mini="true">Esqueceu a senha</a>
+						<a href="#" data-role="button" data-theme="a" data-icon="plus" data-iconpos="left" data-mini="true">Não sou cadastrado</a>
+						<a href="#" data-role="button" data-theme="a" data-icon="star" data-iconpos="left" data-mini="true">Quero avaliar</a>
+					</div>
+				</div>
+
+			</div>
+			<!-- /content -->
+
+		</div>
+		<!-- /page -->
+
+
+		<!-- ###################### page - consulta -->
+		<div data-role="page" id="page-consulta" class="servir-estilo" data-theme="a">
+			<!-- header -->
+			<div data-role="header" class="servir-header" data-theme="a" data-position="fixed">
+				<a href="#page-home" id="servir-icon" class="ui-btn-left"><span class="icon-servir"></span></a>
+				<h1>Supermercado</h1>
+		 		<a data-icon="grid" data-iconpos="notext" id="intro" class="ui-btn-right">Configuracao</a>
+			</div>
+			<!-- /header -->
+
+			<!-- content -->
+			<div data-role="content" class="servir-content" data-theme="a">
+
+				<h2>Encontrar uma loja</h2>
+				<div class="servir-grupo">
+					<form>
+						<div data-role="fieldcontain">
+	  					<label for="select-choice-0" class="select">Estado:</label>
+							<select name="select-choice-0" id="select-choice-0">
+								<option value="">---</option>
+								<option value="Rio de Janeiro">Rio de Janeiro</option>
+								<option value="São Paulo">São Paulo</option>
+								<option value="Brasília">Brasília</option>
+								<option value="Rio Grande do Sul">Rio Grande do Sul</option>
+							</select>
+						</div>
+
+						<div data-role="fieldcontain">
+	  					<label for="select-choice-0" class="select">Município:</label>
+							<select name="select-choice-0" id="select-choice-0">
+								<option value="">---</option>
+								<option value="1">Rio de Janeiro</option>
+								<option value="2">São Paulo</option>
+								<option value="3">Macaé</option>
+								<option value="4">Angra</option>
+							</select>
+						</div>
+
+						<div data-role="fieldcontain">
+  						<a href="#page-consulta" data-role="button" data-theme="a" data-icon="arrow-r" data-iconpos="right" >Pesquisar...</a>
+  					</div>
+					</form>
+					
+				</div>
+
+			</div>
+			<!-- /content -->
+
+			<!-- footer -->
+			<div data-role="footer" data-position="fixed" class="footer-docs" data-theme="a">
+				<div data-role="navbar" data-iconpos="top">
+		      <ul>
+		        <li>
+		          <a href="#page-home" data-transition="fade" data-theme="" data-icon="home">
+		            Início
+		          </a>
+		        </li>
+		        <li>
+		          <a href="#" data-transition="fade" data-theme="a" data-icon="plus">
+		            Cadastro
+		          </a>
+		        </li>
+		      </ul>
+		    </div>
+			</div>
+			<!-- footer -->
+
+		</div>
+		<!-- /page -->
+
+		<script type="text/javascript">
+		$(document).ready(function(){
+			alert($.mobile.activePage.attr('id'));
+			console.log($.mobile.activePage);
+
+		});
+			
+		</script>
+
+		<!-- apis phonegap -->
+			<!--<script type="text/javascript" charset="utf-8" src="apis/accelerometer.js"></script>
+			<script type="text/javascript" charset="utf-8" src="apis/camera.js"></script>
+			<script type="text/javascript" charset="utf-8" src="apis/capture.js"></script>
+			<script type="text/javascript" charset="utf-8" src="apis/compass.js"></script>
+			<script type="text/javascript" charset="utf-8" src="apis/connection.js"></script>
+			<script type="text/javascript" charset="utf-8" src="apis/contacts.js"></script>
+			<script type="text/javascript" charset="utf-8" src="apis/device.js"></script>
+			<script type="text/javascript" charset="utf-8" src="apis/events.js"></script>
+			<script type="text/javascript" charset="utf-8" src="apis/file.js"></script>
+			<script type="text/javascript" charset="utf-8" src="apis/geolocation.js"></script>
+			<script type="text/javascript" charset="utf-8" src="apis/media.js"></script>
+			<script type="text/javascript" charset="utf-8" src="apis/notification.js"></script>
+			<script type="text/javascript" charset="utf-8" src="apis/storage.js"></script> -->
+
+	</body>
 </html>

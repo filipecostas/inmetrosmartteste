@@ -1,0 +1,93 @@
+body  {
+	background-color: #ffffff;
+	font-size: 1.05em;
+}
+
+/* -------------  home */
+.servir-estilo-home {
+	background: linear-gradient(#d7f3ff, #a6e2fd) repeat scroll 0 0 #ffffff;
+}
+
+.servir-estilo-home .content-home {
+	background: none;
+	border: none;
+}
+
+.servir-estilo-home .content-home .logo-servir-splash {
+	text-align: center;
+	margin-top: 0.9em;
+	margin-bottom: 0.4em; 
+}
+
+
+.servir-estilo-home .content-home .servir-grupo {
+	margin-top: 2em;
+}
+
+/* links */
+.servir-estilo-home .content-home .servir-extras {
+	font-size: 0.9em;
+    list-style: none;
+    margin-top: 1.6em;
+}
+
+
+/* -------------  header */
+.servir-estilo .servir-header  {
+	background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #ededed;
+    border-top: 3px solid #4ea04c;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    color: #777777;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.servir-estilo .servir-header #servir-icon  {
+	background: none;
+    border: 1px solid #ededed;
+    box-shadow: none;
+    padding: 0;
+}
+
+.servir-estilo .servir-header #servir-icon:hover {
+	border:1px solid #d7f3ff;
+	background: linear-gradient(#d7f3ff, #a6e2fd) repeat scroll 0 0 #ffffff;
+}
+
+.servir-estilo .servir-header #servir-icon .logo-servir {
+	background-image: url("images/servir-logo.png");
+	background-size: 100%;
+    background-repeat: no-repeat;
+    float: left;
+    height: 40px;
+    width: 120px;
+}
+
+.servir-estilo .servir-header #servir-icon .ui-btn-inner {
+	padding: 1px;
+	border:none;
+}
+
+.servir-estilo .servir-header .icon-servir {
+	background-image: url("images/servir-icon-40px.png");
+	background-size: 100%;
+    background-repeat: no-repeat;
+    float: left;
+    height: 32px;
+    width: 32px;
+}
+
+
+
+/* -------------  content */
+.servir-estilo {
+	background: linear-gradient(#f1f9fd, #f1f9fd) repeat scroll 0 0 #ffffff;
+}
+
+.servir-estilo .servir-content  {
+	background:  linear-gradient(#f1f9fd, #f1f9fd) repeat scroll 0 0 #ffffff;
+    border-bottom: 0;
+    border-top: 0;
+    box-shadow:none;
+    text-shadow: none;
+}
